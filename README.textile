@@ -1,0 +1,37 @@
+h1. Old Yeller
+
+is dead.
+
+You know Frank Sinatra?
+
+He's dead.
+
+Large chunks of your existing code base?
+
+Dead.
+
+OldYeller is a tool to track down dead code in Rails applications.  It sizes
+your application up and let's you know which methods, partials, views, or 
+classes are never called.
+
+To use Old Yeller, copy @./dead_code.rb.example@ to your @RAILS_ROOT@, modify
+any parameters that need it and run
+
+@rake old_yeller@
+
+h2. He's dead, Jim
+
+Old Yeller works by generating tests from @config/routes@ to request every 
+accessible page.  These tests are run through RCov to generate a report on
+which app code is used or not used.  Tooling is added to 
+@ActionView::Template@ to determine which templates are actually rendered.
+
+h2. Requirements
+
+Proper care and feeding of Old Yeller is facilitated by a couple of gems:
+
+* Shoulda
+* RCov
+* Rails 
+
+Copyright (c) 2009 Ben Hughes <ben@pixelmachine.org>, released under the MIT license
